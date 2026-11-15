@@ -2,6 +2,8 @@
 
 Instrument sounds for [`@dsebastien/music-notation`](https://github.com/dsebastien/music-notation): one small soundfont per General MIDI program, so a page loads only the instruments it plays.
 
+Guide: <https://dsebastien.github.io/music-notation-sounds/>.
+
 Install: `npm install @dsebastien/music-notation-sounds`. Changes: `CHANGELOG.md`.
 
 ## What is in `generaluser/`
