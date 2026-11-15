@@ -9,7 +9,8 @@ Status: a private repository, not published to npm yet. See "Before the first re
 - `p000.sf3` to `p127.sf3`: one soundfont per General MIDI program (bank 0).
 - `drums.sf3`: the standard drum kit (bank 128, program 0).
 - `click.sf3`: the kit's metronome click alone, for scores without drums.
-- `index.json`: for each file its name, size, loudness and gain.
+- `index.json`: each program's file. This is what a player reads (3 KB).
+- `report.json`: for each file its name, size, loudness and gain.
 - `LICENSE.txt`: the license of the bank the files are cut from.
 
 The files are cut from **GeneralUser GS 2.0.3** by S. Christian Collins (<https://github.com/mrbumpy409/GeneralUser-GS>). Its license allows use in software and changes to the bank. Read `generaluser/LICENSE.txt`, and its note on the origin of some samples, before you ship the files in a commercial product.
@@ -18,7 +19,7 @@ What was changed:
 
 1. Each preset is in a file of its own, with only its instruments and samples.
 2. Samples are compressed to Ogg Vorbis (SoundFont 3). A few stay uncompressed, because alphaTab 1.9.0 does not decode them right.
-3. Each file carries a gain, so every instrument plays at about the same loudness (-21 dBFS on a fixed test phrase) in alphaTab. The gain is an attenuation below zero in the preset; other players ignore it.
+3. Each file carries a gain, so every instrument plays at about the same loudness (-21 dBFS on a fixed test phrase, less when a full strummed chord would go above full scale) in alphaTab. The gain is an attenuation below zero in the preset; other players ignore it.
 
 Sizes: 13.9 MB for the 128 programs. A steel guitar is 110 KB, a grand piano 359 KB, the median instrument 82 KB.
 
