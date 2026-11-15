@@ -1,0 +1,33 @@
+{
+    "name": "@dsebastien/music-notation-sounds",
+    "version": "0.1.0",
+    "description": "Instrument sounds for @dsebastien/music-notation: one small soundfont per General MIDI program, cut from GeneralUser GS.",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "author": {
+        "name": "Sébastien Dubois"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dsebastien/music-notation-sounds.git"
+    },
+    "files": [
+        "generaluser",
+        "node.js",
+        "README.md",
+        "LICENSE.md"
+    ],
+    "keywords": [
+        "soundfont",
+        "sf3",
+        "general-midi",
+        "generaluser-gs",
+        "alphatab",
+        "music-notation"
+    ],
+    "type": "module",
+    "exports": {
+        "./node": "./node.js",
+        "./generaluser/*": "./generaluser/*",
+        "./package.json": "./package.json"
+    }
+}
