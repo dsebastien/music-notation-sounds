@@ -1,6 +1,6 @@
 {
     "name": "@dsebastien/music-notation-sounds",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Instrument sounds for @dsebastien/music-notation: one small soundfont per General MIDI program, cut from GeneralUser GS.",
     "license": "SEE LICENSE IN LICENSE.md",
     "author": {
@@ -14,6 +14,7 @@
         "generaluser",
         "node.js",
         "README.md",
+        "CHANGELOG.md",
         "LICENSE.md"
     ],
     "keywords": [

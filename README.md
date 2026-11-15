@@ -2,7 +2,7 @@
 
 Instrument sounds for [`@dsebastien/music-notation`](https://github.com/dsebastien/music-notation): one small soundfont per General MIDI program, so a page loads only the instruments it plays.
 
-Status: a private repository, not published to npm yet. See "Before the first release" below.
+Install: `npm install @dsebastien/music-notation-sounds`. Changes: `CHANGELOG.md`.
 
 ## What is in `generaluser/`
 
@@ -21,7 +21,7 @@ What was changed:
 2. Samples are compressed to Ogg Vorbis (SoundFont 3). A few stay uncompressed, because alphaTab 1.9.0 does not decode them right.
 3. Each file carries a gain, so every instrument plays at about the same loudness (-21 dBFS on a fixed test phrase, less when a full strummed chord would go above full scale) in alphaTab. The gain is an attenuation below zero in the preset; other players ignore it.
 
-Sizes: 13.9 MB for the 128 programs. A steel guitar is 110 KB, a grand piano 359 KB, the median instrument 82 KB.
+Sizes: 13.5 MB for the 128 programs. A steel guitar is 112 KB, a grand piano 392 KB, the median instrument 84 KB.
 
 ## How to use it
 
@@ -55,7 +55,7 @@ import { generaluser } from '@dsebastien/music-notation-sounds/node'
 renderTab('tab', source, host, { alphaTab, assets: { font, soundFont, instruments: generaluser } })
 ```
 
-An app with a build step can embed only the files it wants (for chord diagrams: `p025.sf3`, `p028.sf3`, `p000.sf3`, `click.sf3` and `index.json`, about 540 KB) and pass a function that gives their bytes: `instruments: (file) => Promise.resolve(embedded[file] ?? null)`.
+An app with a build step can embed only the files it wants (for chord diagrams: `p025.sf3`, `p028.sf3`, `p000.sf3`, `click.sf3` and `index.json`, about 550 KB) and pass a function that gives their bytes: `instruments: (file) => Promise.resolve(embedded[file] ?? null)`.
 
 ## How the files are made
 
@@ -66,11 +66,3 @@ bun scripts/sounds/split-soundfont.ts <GeneralUser-GS.sf2> <out folder> --name "
 ```
 
 The script checks every compressed sample in alphaTab against its uncompressed form, and every program against the whole bank.
-
-## Before the first release
-
-1. Decide on the license question (see the design ticket, music-notation #124).
-2. Listen: the compressed files against the whole bank, and the levels across instruments.
-3. Make the repository public, then `npm publish --access public`.
-4. In the library, add this package as an optional peer dependency (as alphaTab is).
-5. Put the `generaluser` folder on the host your web pages read, and name it in their options.
